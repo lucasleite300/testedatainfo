@@ -1,0 +1,46 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+     xmlns:h="http://java.sun.com/jsf/html"
+     xmlns:f="http://java.sun.com/jsf/core"
+     xmlns:p="http://primefaces.org/ui">
+
+	<h:head>
+		<h:outputStylesheet library="css" name="style.css" />
+	</h:head>
+	
+	<h:body>
+		<f:metadata>
+			<f:viewParam name="id" value="#{usuarioBean.idUsuario}" converter="javax.faces.Long"></f:viewParam>
+			<f:event listener="#{usuarioBean.inicializar()}" type="preRenderView"></f:event>
+	    </f:metadata>
+	
+		<div class="container">
+			<div class="box">
+			     <h:form>
+			          <p:growl id="messages"/>
+			          <h1 class="titulo-pag"><span>NOVO USUÁRIOS</span></h1>
+			          
+			          <div class="form">		
+		                <p:outputLabel for="nome" value="Nome:" />
+		                <p:inputText id="nome" value="#{usuarioBean.usuario.nome}" />
+		              </div>
+		              
+		              <div class="form">
+						<p:outputLabel for="email" value="E-mail:" />
+		                <p:inputText id="email" value="#{usuarioBean.usuario.email}" required="true"/>
+		              </div>
+		              
+					  <div class="form">
+		                <p:outputLabel for="senha" value="Senha:" />
+		                <p:inputText id="senha" value="#{usuarioBean.usuario.senha}" required="true"/>
+					  </div>
+					  
+					  <div class="conteiner-btn">
+		                <p:commandButton value="Cadastrar" action="#{usuarioBean.cadastraUsuario}" update="messages"></p:commandButton>
+		                <p:spacer width="10"/>
+		                <p:commandButton value="Voltar" immediate="true" action="busca.xhtml?faces-redirect=true" process="@this"/>
+		              </div>  
+			     </h:form>
+		     </div>
+		 </div>
+	</h:body>
+</html>

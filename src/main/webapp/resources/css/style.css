@@ -1,0 +1,58 @@
+.container {
+	width: 100vw;
+	height: 100vh;
+	background: #435070;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+}
+.table {
+	width: 500px;
+	height: 500px;
+	background: #435070;
+}
+.box {
+	width: 380px;
+	height: 320px;
+	background: lightgrey;
+	padding-left: 20px;
+}
+.titulo-pag {					
+	margin: 15px 0 45px 0;
+	height: 20px;
+	font-size: 40px;
+	font-weight: normal;
+	color: #435070;
+}
+.titulo-login {
+	margin: 30px 0 45px 0;
+	height: 70px;
+	font-size: 40px;
+	font-weight: normal;
+	color: #435070;	
+}
+.titulo-login > span {
+	display: inline-block;
+}
+.titulo-login > span > span {
+	font-weight: normal;
+	font-size: 25px;
+	color: #000000;
+}
+.form {
+	padding-bottom: 10px;
+}
+.form label{
+	padding: 20px;
+}
+.conteiner-btn{
+	float: right;
+	padding-top: 5px;
+	padding-right: 30px;
+}
+
+body {
+margin: 0px;
+}
+

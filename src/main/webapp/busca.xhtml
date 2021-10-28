@@ -1,0 +1,55 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+      
+    <h:head>
+		<h:outputStylesheet library="css" name="style.css" />
+	</h:head>
+	
+	<h:body>
+	  
+		<div class="container">
+			<div class="tabela">
+			<h:form>
+		
+				<p:growl id="messages"/>
+				<p:toolbar>
+					<p:toolbarGroup>
+						<p:commandButton action="cadastro.xhtml?faces-redirect=true" icon="pi pi-plus" 
+				           	value="Novo" styleClass="ui-button-success"/>
+				   		<p:spacer width="10"/>
+				        <p:commandButton value="Excluir Selecionado(s)" icon="pi pi-trash" styleClass="ui-button-danger"
+				           	action="#{listaUsuarioBean.excluirSelecionados}"
+				            process="@form" update="@form"/>
+				        <p:spacer width="10"/>
+			        </p:toolbarGroup>
+				</p:toolbar>
+            
+		        <p:dataTable id="usuarioTable" widgettVar="usuarioTable" rows="5" 
+		        	var="usuario" value="#{listaUsuarioBean.usuarios}" rowKey="#{usuario.id}" 
+		        	selection="#{listaUsuarioBean.usuarioSelecionados}"
+		        	paginator="true"
+		        	paginatorPosition="bottom">
+		        	
+		            <p:column selectionMode="multiple" width="5%" styleClass="align-center"/>
+		
+		            <p:column headerText="Name"
+		            		  filterBy="#{usuario.nome}"
+		            		  sortBy="#{usuario.nome}" filterMatchMode="contains">
+		                <h:link value="#{usuario.nome}" outcome="cadastro.xhtml" >
+		                	<f:param name="id" value="#{usuario.id}" />
+		                </h:link>
+		            </p:column>
+		
+		            <p:column headerText="Email"
+		            		  filterBy="#{usuario.email}"
+		            		  sortBy="#{usuario.email}" filterMatchMode="contains">
+		                <h:outputText value="#{usuario.email}" />
+		            </p:column>
+		        </p:dataTable>
+			</h:form>
+			</div>
+		</div>  
+	</h:body>      
+</html>

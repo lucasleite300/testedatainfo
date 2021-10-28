@@ -1,0 +1,33 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+	<h:outputStylesheet library="css" name="style.css" />
+</h:head>
+
+<h:body>
+	<div class="container">
+		<div class="box">
+			<h:form>
+				<p:growl id="messages"/>
+		        <h1 class="titulo-pag">
+					<span>MENU USUÁRIOS</span>
+				</h1>
+				<div class="card">
+			        <p:menu>
+			            <p:submenu label="Opções">
+			                <p:menuitem value="Cadastrar" action="cadastro.xhtml?faces-redirect=true" ajax="false" icon="pi pi-save"/>
+			                <p:menuitem value="Buscar" action="busca.xhtml?faces-redirect=true" ajax="false" icon="pi pi-search"/>
+			            </p:submenu>
+			            <p:submenu label="Navigação">
+			                <p:menuitem value="Sair do sistema" action="index.xhtml?faces-redirect=true" ajax="false" icon="pi pi-sign-out"/>
+			            </p:submenu>
+			        </p:menu>
+			    </div>
+			</h:form>
+		</div>
+	</div>
+</h:body>
+</html>

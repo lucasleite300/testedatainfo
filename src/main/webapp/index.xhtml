@@ -1,0 +1,41 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+  xmlns:h="http://java.sun.com/jsf/html"
+  xmlns:f="http://java.sun.com/jsf/core"
+  xmlns:p="http://primefaces.org/ui">
+
+	<h:head>
+		<h:outputStylesheet library="css" name="style.css" />
+	</h:head>
+	
+	<h:body>
+		<div class="container">
+			<div class="box">
+				<h:form>
+				  	<p:growl id="messages"/>
+				  	
+			  		<h1 class="titulo-login">
+						<span>
+							Olá, seja bem-vindo!<br />
+							<span>Faça seu login, para continuar</span>
+						</span>
+					</h1>
+			  		
+			  		<div class="form">
+					    <p:outputLabel for="email" value="E-mail:" />
+					    <p:inputText id="email" value="#{loginBean.usuario.email}" />
+			  		</div>
+				
+					<div class ="form">
+					    <p:outputLabel for="senha" value="Senha:" />
+					    <p:password id="senha" value="#{loginBean.usuario.senha}" />
+					</div>
+				
+					<div class="conteiner-btn">
+				    	<p:commandButton value="Enviar" class="btn" action="#{loginBean.envia}" ajax="false"></p:commandButton>
+					</div>
+					
+				</h:form>
+			</div>
+		</div>
+	</h:body>
+</html>
